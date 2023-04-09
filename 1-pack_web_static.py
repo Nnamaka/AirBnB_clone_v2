@@ -19,7 +19,7 @@ print("Archive path is {}".format(archive_path))
 
 def do_pack():
     """ Compresses the web_static folder """
-    command = "mkdir -p versions && tar -czvf {} web_static/"
+    command = "mkdir -p versions && tar -czvf {} web_static/" \
     .format(archive_path)
     result = local(command)
 
