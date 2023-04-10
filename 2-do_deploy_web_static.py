@@ -9,18 +9,21 @@ import os
 
 # define fab enviroment variables
 env.user = "ubuntu"
-env.hosts = ["3.94.181.72", "54.173.9.45"]
+env.hosts = "3.94.181.72"
 
 
 def do_deploy(arc_path):
     """ Upload archive to server """
     if not os.path.exists(arc_path):
+        print("no deployment")
         return False
     else:
         # upload archive to tmp directory
         put(arc_path, "/tmp/")
+        print("failded here")
         arc_dest = "/data/web_static/releases/" + \
             arc_path[9:-4]
+        print("failed 2here")
         run("sudo mkdir -p {} && sudo tar -xzvf {} \
             -C {}/".format(arc_dest, "/tmp/"+arc_path[9:], arc_dest))
 
