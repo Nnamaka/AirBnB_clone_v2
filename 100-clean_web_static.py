@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Delete out of date files
-"""
+""" Delete out of date archive files"""
 
 # define fab enviroment variables
 env.user = "ubuntu"
