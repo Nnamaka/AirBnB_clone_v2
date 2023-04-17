@@ -6,14 +6,7 @@ env.hosts = ["3.94.181.72", "54.173.9.45"]
 
 
 def do_clean(number=0):
-    """
-    House Keeping for archived files
-
-    Arguments:
-        number: the number of files to delete
-    Returns:
-        returns nothing
-    """
+    """ Remove archived files """
 
     path = '/data/web_static/releases'
 
