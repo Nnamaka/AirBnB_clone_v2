@@ -12,11 +12,6 @@ def do_clean(number=0):
 
     number = 2 if number == 0 else number + 1
 
-    clean_local = 'ls -t versions | tail -n +{} | xargs rm -rf'.\
-        format(number)
+    local('cd versions ; ls -t | tail -n +{} | xargs rm -rf'.format(number))
 
-    clean_server = "ls -t {}| tail -n +{} | xargs rm -rf".format(
-        path, number)
-
-    run(clean_server)
-    local(clean_local)
+    run('cd {} ; ls -t | tail -n +{} | xargs rm -rf'.format(path, number))
