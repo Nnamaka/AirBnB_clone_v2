@@ -15,7 +15,7 @@ def do_clean(number=0):
     elif number == 2:
         number = 2
 
-    clean_local = 'ls -t versioins | tail -n +{} | xargs rm -rf'.\
+    clean_local = 'ls -t versions | tail -n +{} | xargs rm -rf'.\
         format(number)
 
     clean_server = "ls -t {}| tail -n +{} | xargs rm -rf".format(
