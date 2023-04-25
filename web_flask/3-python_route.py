@@ -26,9 +26,11 @@ def text_route(text):
 
 
 @app.route('/python', defaults={'text'='is cool'})
-@app.route('/python/<text>'):
+@app.route('/python/<text>')
+def python_route(text):
     """ Display aa custom text if text is assigned """
     return 'Python {}'.format(text.replace('_', ' '))
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
