@@ -25,9 +25,9 @@ def text_route(text):
     return 'C {}'.format(text.replace('_', ' '))
 
 
-@app.route('/python', defaults={'text'='is cool'})
+@app.route('/python')
 @app.route('/python/<text>')
-def python_route(text):
+def python_route(text='is cool'):
     """ Display aa custom text if text is assigned """
     return 'Python {}'.format(text.replace('_', ' '))
 
